@@ -33,16 +33,6 @@
                     <failIfNoTests>true</failIfNoTests>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId/>
-                ...
-                <executions>
-                    <execution>
-                        ...
-                    </execution>
-                    ...
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
