@@ -24,8 +24,7 @@ public class Radio {
     public void next() {
 
         ch++;
-        if (ch <=9)
-            return;
+        if (ch >9)
         ch = 0;
     }
 
@@ -41,8 +40,8 @@ public class Radio {
         //0..9
         if ((ch >= 0) && (ch <= 9))
             this.ch = ch;
-        //else
-        //  this.ch=0;
+        else
+          this.ch=0;
     }
 
     public int getCh() {
@@ -56,8 +55,8 @@ public class Radio {
     public void setCurrentVolume(int currentVolume) {
         if ((currentVolume >= 0) && (currentVolume <= 10))
             this.currentVolume = currentVolume;
-        // else
-        //   this.currentVolume=0;
+         else
+          this.currentVolume=0;
     }
 }
 
