@@ -2,21 +2,26 @@ package ru.netology;
 
 public class Radio {
     //поля
-    private int currentVolume = 0;
+    private int currentvolume = 0;
     private int ch = 0;
 
     //увеличение громкости
-    public void increaseVolume() {
+    public void increasevolume() {
 
-        if (currentVolume < 10)
-            currentVolume++;
+        if (currentvolume < 10) {
+            currentvolume++;
+        } else {
+            currentvolume = 10;
+        }
     }
 
     //уменьшение громкости
-    public void decreaseVolume() {
-        if (currentVolume == 0)
+    public void decreasevolume() {
+        if (this.currentvolume == 0) {
             return;
-        currentVolume--;
+        } else {
+            this.currentvolume--;
+        }
 
     }
 
@@ -24,39 +29,53 @@ public class Radio {
     public void next() {
 
         ch++;
-        if (ch >9)
-        ch = 0;
+        if (ch > 9) {
+            ch = 0;
+        }
     }
 
     //канал -
     public void prev() {
         ch--;
-        if (ch < 0)
+        if (ch < 0) {
             ch = 9;
+        }
+
     }
 
     //установить канал
-    public void setCh(int ch) {
-        //0..9
-        if ((ch >= 0) && (ch <= 9))
-            this.ch = ch;
-        else
-          this.ch=0;
+    public void setch(int ch) {
+        if (ch >= 0) {
+            if (ch <= 9) {
+                this.ch = ch;
+            } else {
+                this.ch = 0;
+            }
+        } else {
+            this.ch = 0;
+        }
     }
 
-    public int getCh() {
-        return ch;
+    public int getch() {
+        return this.ch;
     }
 
-    public int getCurrentVolume() {
-        return currentVolume;
+    public int getcurrentvolume() {
+        return currentvolume;
     }
 
-    public void setCurrentVolume(int currentVolume) {
-        if ((currentVolume >= 0) && (currentVolume <= 10))
-            this.currentVolume = currentVolume;
-         else
-          this.currentVolume=0;
+    public void setcurrentvolume(int currentvolume) {
+        if (currentvolume >= 0) {
+            if (currentvolume <= 10) {
+                this.currentvolume = currentvolume;
+            } else {
+                this.currentvolume = 0;
+            }
+        } else {
+            this.currentvolume = 0;
+        }
+
+
     }
 }
 
