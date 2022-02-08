@@ -4,25 +4,42 @@ public class Radio {
     //поля
     private int currentvolume = 0;
     private int ch = 0;
-    private  int chmax;
+    private int chmax;
     // придел по звуку
-    private  int volumemax;
+    private int volumemax;
 
+
+    ///пустой
     public Radio() {
-        this.chmax=10-1;
-        this.volumemax=10;
+        this.chmax = 10 - 1;
+        this.volumemax = 10;
     }
 
-    public Radio(int cmax){
-        this.chmax=cmax-1;
-        this.volumemax=100;
+    // конструктор с максимальным каналом
+    public Radio(int cmax) {
+        if (cmax >= 1) {
+            this.chmax = cmax - 1;
+        } else {
+            this.chmax = 0;
+        }
+        this.volumemax = 100;
+
     }
 
-    public Radio(int cmax, int volmax)
-    {
-        this.chmax=cmax-1;
-        this.volumemax=volmax;
+    // конструктор с максимальным каналом и  звуком
+    public Radio(int cmax, int volmax) {
+        if (cmax >= 1) {
+            this.chmax = cmax - 1;
+        } else {
+            this.chmax = 0;
+        }
+        if (volmax >= 2) {
+            this.volumemax = volmax;
+        } else {
+            this.volumemax = 2;
+        }
     }
+
     //увеличение громкости
     public void increasevolume() {
 
@@ -77,14 +94,19 @@ public class Radio {
     public int getch() {
         return this.ch;
     }
- public  int getChmax()
- {
-     return this.chmax;
- }
- public void setChmax(int cmax)
- {
-   this.chmax=cmax;
- }
+
+    public int getchmax() {
+        return this.chmax;
+    }
+
+    public void setchmax(int cmax) {
+        if (cmax >= 2) {
+            this.chmax = cmax - 1;
+        } else {
+            this.chmax = 1;
+        }
+    }
+
     public int getcurrentvolume() {
         return currentvolume;
     }

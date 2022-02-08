@@ -146,4 +146,76 @@ class RadioTest {
         actual = thisRadio.getcurrentvolume();
         assertEquals(expected, actual);
     }
+
+    @Test
+    void SetVolumeConstA() {
+        Radio thisRadio = new Radio(100);
+        int expected;
+        int actual;
+        thisRadio.setcurrentvolume(-1);
+        thisRadio.increasevolume();
+        expected = 1;
+        actual = thisRadio.getcurrentvolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void SetVolumeConstALL() {
+        Radio thisRadio = new Radio(100, 100);
+        int expected;
+        int actual;
+        thisRadio.setcurrentvolume(-1);
+        thisRadio.increasevolume();
+        expected = 1;
+        actual = thisRadio.getcurrentvolume();
+        assertEquals(expected, actual);
+    }
+
+    /////---------------------------------------------------------------------------------------------
+    @Test
+    void SetVolumeConst0() {
+        Radio thisRadio = new Radio(0);
+        int expected;
+        int actual;
+        thisRadio.setcurrentvolume(0);
+        thisRadio.increasevolume();
+        expected = 1;
+        actual = thisRadio.getcurrentvolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void SetVolumeConst2() {
+        Radio thisRadio = new Radio(0, 1);
+        int expected;
+        int actual;
+        thisRadio.setcurrentvolume(0);
+        thisRadio.increasevolume();
+        expected = 1;
+        actual = thisRadio.getcurrentvolume();
+        assertEquals(expected, actual);
+    }
+    @Test
+    void SetChanel() {
+        Radio thisRadio = new Radio();
+        int expected;
+        int actual;
+        thisRadio.setchmax( 2 );
+        thisRadio.increasevolume();
+        expected = 1;
+        actual = thisRadio.getchmax();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void SetChanel1() {
+        Radio thisRadio = new Radio();
+        int expected;
+        int actual;
+        thisRadio.setchmax( 1 );
+        thisRadio.increasevolume();
+        expected = 1;
+        actual = thisRadio.getchmax();
+        assertEquals(expected, actual);
+    }
 }
