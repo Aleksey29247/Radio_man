@@ -148,14 +148,14 @@ class RadioTest {
     }
 
     @Test
-    void SetVolumeConstA() {
+    void SetChaenelConstA() {
         Radio thisRadio = new Radio(100);
         int expected;
         int actual;
-        thisRadio.setcurrentvolume(-1);
-        thisRadio.increasevolume();
-        expected = 1;
-        actual = thisRadio.getcurrentvolume();
+        thisRadio.setch(97);
+        thisRadio.next();
+        expected = 98;
+        actual = thisRadio.getch();
         assertEquals(expected, actual);
     }
 

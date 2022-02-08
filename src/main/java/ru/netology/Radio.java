@@ -18,7 +18,7 @@ public class Radio {
     // конструктор с максимальным каналом
     public Radio(int cmax) {
         if (cmax >= 1) {
-            this.chmax = cmax - 1;
+            this.chmax = cmax-1 ;
         } else {
             this.chmax = 0;
         }
@@ -29,7 +29,7 @@ public class Radio {
     // конструктор с максимальным каналом и  звуком
     public Radio(int cmax, int volmax) {
         if (cmax >= 1) {
-            this.chmax = cmax - 1;
+            this.chmax = cmax ;
         } else {
             this.chmax = 0;
         }
@@ -101,7 +101,7 @@ public class Radio {
 
     public void setchmax(int cmax) {
         if (cmax >= 2) {
-            this.chmax = cmax - 1;
+            this.chmax = cmax -1;
         } else {
             this.chmax = 1;
         }
