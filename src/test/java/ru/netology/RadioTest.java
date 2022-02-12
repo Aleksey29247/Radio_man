@@ -10,19 +10,19 @@ class RadioTest {
         //если значение 0 ++
     void increaseVolume0() {
         Radio thisRadio = new Radio();
-        thisRadio.increasevolume();
+        thisRadio.incVolume();
         int expected = 1;
-        int actual = thisRadio.getcurrentvolume();
+        int actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
     @Test
     void increaseVolume10() {
         Radio thisRadio = new Radio();
-        thisRadio.setcurrentvolume(10);
-        thisRadio.increasevolume();
+        thisRadio.setCurrentVolume(10);
+        thisRadio.incVolume();
         int expected = 10;
-        int actual = thisRadio.getcurrentvolume();
+        int actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);//a
     }
 
@@ -30,9 +30,9 @@ class RadioTest {
         //0--
     void decreaseVolume0() {
         Radio thisRadio = new Radio();
-        thisRadio.decreasevolume();
+        thisRadio.decVolume();
         int expected = 0;
-        int actual = thisRadio.getcurrentvolume();
+        int actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
@@ -40,10 +40,10 @@ class RadioTest {
         //любое значение --
     void decreaseVolume2() {
         Radio thisRadio = new Radio();
-        thisRadio.setcurrentvolume(3);
-        thisRadio.decreasevolume();
+        thisRadio.setCurrentVolume(3);
+        thisRadio.decVolume();
         int expected = 2;
-        int actual = thisRadio.getcurrentvolume();
+        int actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
@@ -53,7 +53,7 @@ class RadioTest {
         Radio thisRadio = new Radio();
         thisRadio.next();
         int expected = 1;
-        int actual = thisRadio.getch();
+        int actual = thisRadio.getChannel();
 
         assertEquals(expected, actual);
     }
@@ -62,10 +62,10 @@ class RadioTest {
         //канал ++
     void chNext10() {
         Radio thisRadio = new Radio();
-        thisRadio.setch(9);
+        thisRadio.setChannel(9);
         thisRadio.next();
         int expected = 0;
-        int actual = thisRadio.getch();
+        int actual = thisRadio.getChannel();
 
         assertEquals(expected, actual);
     }
@@ -76,17 +76,17 @@ class RadioTest {
         Radio thisRadio = new Radio();
         thisRadio.prev();
         int expected = 9;
-        int actual = thisRadio.getch();
+        int actual = thisRadio.getChannel();
         assertEquals(expected, actual);
     }
 
     @Test
     void chPrev0() {
         Radio thisRadio = new Radio();
-        thisRadio.setch(1);
+        thisRadio.setChannel(1);
         thisRadio.prev();
         int expected = 0;
-        int actual = thisRadio.getch();
+        int actual = thisRadio.getChannel();
         assertEquals(expected, actual);
     }
 
@@ -94,10 +94,10 @@ class RadioTest {
         //канал установить
     void Setch() {
         Radio thisRadio = new Radio();
-        thisRadio.setch(8);
+        thisRadio.setChannel(8);
         thisRadio.next();
         int expected = 9;
-        int actual = thisRadio.getch();
+        int actual = thisRadio.getChannel();
         assertEquals(expected, actual);
     }
 
@@ -105,10 +105,10 @@ class RadioTest {
         //канал установить
     void Setch12() {
         Radio thisRadio = new Radio();
-        thisRadio.setch(10);
+        thisRadio.setChannel(10);
         thisRadio.next();
         int expected = 1;
-        int actual = thisRadio.getch();
+        int actual = thisRadio.getChannel();
         assertEquals(expected, actual);
     }
 
@@ -116,10 +116,10 @@ class RadioTest {
         //канал установить
     void setchA() {
         Radio thisRadio = new Radio();
-        thisRadio.setch(-1);
+        thisRadio.setChannel(-1);
         thisRadio.next();
         int expected = 1;
-        int actual = thisRadio.getch();
+        int actual = thisRadio.getChannel();
         assertEquals(expected, actual);
     }
 
@@ -127,10 +127,10 @@ class RadioTest {
         //канал установить
     void SetVolume11() {
         Radio thisRadio = new Radio();
-        thisRadio.setcurrentvolume(11);
-        thisRadio.increasevolume();
+        thisRadio.setCurrentVolume(11);
+        thisRadio.incVolume();
         int expected = 1;
-        int actual = thisRadio.getcurrentvolume();
+        int actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
@@ -140,10 +140,10 @@ class RadioTest {
         Radio thisRadio = new Radio();
         int expected;
         int actual;
-        thisRadio.setcurrentvolume(-1);
-        thisRadio.increasevolume();
+        thisRadio.setCurrentVolume(-1);
+        thisRadio.incVolume();
         expected = 1;
-        actual = thisRadio.getcurrentvolume();
+        actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
@@ -152,10 +152,10 @@ class RadioTest {
         Radio thisRadio = new Radio(100);
         int expected;
         int actual;
-        thisRadio.setch(97);
+        thisRadio.setChannel(97);
         thisRadio.next();
         expected = 98;
-        actual = thisRadio.getch();
+        actual = thisRadio.getChannel();
         assertEquals(expected, actual);
     }
 
@@ -164,23 +164,22 @@ class RadioTest {
         Radio thisRadio = new Radio(100, 100);
         int expected;
         int actual;
-        thisRadio.setcurrentvolume(-1);
-        thisRadio.increasevolume();
+        thisRadio.setCurrentVolume(-1);
+        thisRadio.incVolume();
         expected = 1;
-        actual = thisRadio.getcurrentvolume();
+        actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
-    /////---------------------------------------------------------------------------------------------
     @Test
     void SetVolumeConst0() {
         Radio thisRadio = new Radio(0);
         int expected;
         int actual;
-        thisRadio.setcurrentvolume(0);
-        thisRadio.increasevolume();
+        thisRadio.setCurrentVolume(0);
+        thisRadio.incVolume();
         expected = 1;
-        actual = thisRadio.getcurrentvolume();
+        actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
@@ -189,21 +188,22 @@ class RadioTest {
         Radio thisRadio = new Radio(0, 1);
         int expected;
         int actual;
-        thisRadio.setcurrentvolume(0);
-        thisRadio.increasevolume();
+        thisRadio.setCurrentVolume(0);
+        thisRadio.incVolume();
         expected = 1;
-        actual = thisRadio.getcurrentvolume();
+        actual = thisRadio.getCurrentVolume();
         assertEquals(expected, actual);
     }
+
     @Test
     void SetChanel() {
         Radio thisRadio = new Radio();
         int expected;
         int actual;
-        thisRadio.setchmax( 2 );
-        thisRadio.increasevolume();
+        thisRadio.setChannelMax(2);
+        thisRadio.incVolume();
         expected = 1;
-        actual = thisRadio.getchmax();
+        actual = thisRadio.getChannelMax();
         assertEquals(expected, actual);
     }
 
@@ -212,10 +212,10 @@ class RadioTest {
         Radio thisRadio = new Radio();
         int expected;
         int actual;
-        thisRadio.setchmax( 1 );
-        thisRadio.increasevolume();
+        thisRadio.setChannelMax(1);
+        thisRadio.incVolume();
         expected = 1;
-        actual = thisRadio.getchmax();
+        actual = thisRadio.getChannelMax();
         assertEquals(expected, actual);
     }
 }

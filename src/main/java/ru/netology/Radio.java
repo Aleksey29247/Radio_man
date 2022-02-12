@@ -2,60 +2,60 @@ package ru.netology;
 
 public class Radio {
     //поля
-    private int currentvolume = 0;
-    private int ch = 0;
-    private int chmax;
+    private int currentVolume = 0;
+    private int channel = 0;
+    private int channelMax;
     // придел по звуку
-    private int volumemax;
+    private int volumeMax;
 
 
     ///пустой
     public Radio() {
-        this.chmax = 10 - 1;
-        this.volumemax = 10;
+        this.channelMax = 10 - 1;
+        this.volumeMax = 10;
     }
 
     // конструктор с максимальным каналом
-    public Radio(int cmax) {
-        if (cmax >= 1) {
-            this.chmax = cmax-1 ;
+    public Radio(int maxChannel) {
+        if (maxChannel >= 1) {
+            this.channelMax = maxChannel - 1;
         } else {
-            this.chmax = 0;
+            this.channelMax = 0;
         }
-        this.volumemax = 100;
+        this.volumeMax = 100;
 
     }
 
     // конструктор с максимальным каналом и  звуком
-    public Radio(int cmax, int volmax) {
-        if (cmax >= 1) {
-            this.chmax = cmax ;
+    public Radio(int maxChannel, int maxVolume) {
+        if (maxChannel >= 1) {
+            this.channelMax = maxChannel;
         } else {
-            this.chmax = 0;
+            this.channelMax = 0;
         }
-        if (volmax >= 2) {
-            this.volumemax = volmax;
+        if (maxVolume >= 2) {
+            this.volumeMax = maxVolume;
         } else {
-            this.volumemax = 2;
+            this.volumeMax = 2;
         }
     }
 
     //увеличение громкости
-    public void increasevolume() {
+    public void incVolume() {
 
-        if (currentvolume < volumemax) {
-            currentvolume++;
+        if (currentVolume < volumeMax) {
+            currentVolume++;
         } else {
-            currentvolume = volumemax;
+            currentVolume = volumeMax;
         }
     }
 
     //уменьшение громкости
-    public void decreasevolume() {
-        if (this.currentvolume == 0) {
+    public void decVolume() {
+        if (this.currentVolume == 0) {
             return;
         } else {
-            this.currentvolume--;
+            this.currentVolume--;
         }
 
     }
@@ -63,63 +63,63 @@ public class Radio {
     //канал +
     public void next() {
 
-        ch++;
-        if (ch > this.chmax) {
-            ch = 0;
+        channel++;
+        if (channel > this.channelMax) {
+            channel = 0;
         }
     }
 
     //канал -
     public void prev() {
-        ch--;
-        if (ch < 0) {
-            ch = this.chmax;
+        channel--;
+        if (channel < 0) {
+            channel = this.channelMax;
         }
 
     }
 
     //установить канал
-    public void setch(int ch) {
-        if (ch >= 0) {
-            if (ch <= this.chmax) {
-                this.ch = ch;
+    public void setChannel(int channel) {
+        if (channel >= 0) {
+            if (channel <= this.channelMax) {
+                this.channel = channel;
             } else {
-                this.ch = 0;
+                this.channel = 0;
             }
         } else {
-            this.ch = 0;
+            this.channel = 0;
         }
     }
 
-    public int getch() {
-        return this.ch;
+    public int getChannel() {
+        return this.channel;
     }
 
-    public int getchmax() {
-        return this.chmax;
+    public int getChannelMax() {
+        return this.channelMax;
     }
 
-    public void setchmax(int cmax) {
-        if (cmax >= 2) {
-            this.chmax = cmax -1;
+    public void setChannelMax(int maxChannel) {
+        if (maxChannel >= 2) {
+            this.channelMax = maxChannel - 1;
         } else {
-            this.chmax = 1;
+            this.channelMax = 1;
         }
     }
 
-    public int getcurrentvolume() {
-        return currentvolume;
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 
-    public void setcurrentvolume(int currentvolume) {
-        if (currentvolume >= 0) {
-            if (currentvolume <= volumemax) {
-                this.currentvolume = currentvolume;
+    public void setCurrentVolume(int volumeCurrent) {
+        if (volumeCurrent >= 0) {
+            if (volumeCurrent <= volumeMax) {
+                this.currentVolume = volumeCurrent;
             } else {
-                this.currentvolume = 0;
+                this.currentVolume = 0;
             }
         } else {
-            this.currentvolume = 0;
+            this.currentVolume = 0;
         }
 
     }
